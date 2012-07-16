@@ -1,0 +1,21 @@
+# 关于maketrans/translate的使用
+
+maketrans(from, to)->string 用来生成一个from->to的映射table,
+要求from/to相同长度，生成的table可用于string作为规则。
+
+translate(table)->string  按照table的规则将原str转换为新的str.
+
+例如：
+
+import string
+offset = 2
+table = string.maketrans(string.ascii_lowercase, string.ascii_lowercase[offset:]
+	+ string.ascii_lowercase[:offset])
+src = "this is the original string"
+src.translate(table) #或者
+string.translate(src, table)
+
+# str/string不翻译的方法学习
+
+
+
